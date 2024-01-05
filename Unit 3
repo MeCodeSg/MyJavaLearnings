@@ -1,49 +1,119 @@
 # typical star patter
-for (int i=4; i>0; i--){
-    for (int j=i; j>0; j--) {
-      System.out.print('*');
-    }
-    System.out.println();
-}
-int i = 4;
-while (i>0){
-	int j = 0;
-	while (j<i){
-		System.out.print('*');
-    	j++;
+	for (int i=4; i>0; i--){
+	    for (int j=i; j>0; j--) {
+	      System.out.print('*');
+	    }
+	    System.out.println();
 	}
-	System.out.println();
-    i--;
-}
+	int i = 4;
+	while (i>0){
+		int j = 0;
+		while (j<i){
+			System.out.print('*');
+	    	j++;
+		}
+		System.out.println();
+	    i--;
+	}
  # sum of first n natural even no.
-Scanner sc = new Scanner(System.in);
-System.out.print("Enter a number: ");
-int n = sc.nextInt();
-int sum = 0;
-for (int i=1; i<=n; i++) {
-	sum += 2*i;
-}
-System.out.println(sum);
-# table of a no. n
-Scanner sc = new Scanner(System.in);
-System.out.print("Enter a number: ");
-int n = sc.nextInt();
-for (int i=1; i<=10; i++){
-	System.out.println(n+"x"+i+"="+n*i);
-}
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter a number: ");
+	int n = sc.nextInt();
+	int sum = 0;
+	for (int i=1; i<=n; i++) {
+		sum += 2*i;
+	}
+	System.out.println(sum);
+	# table of a no. n
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter a number: ");
+	int n = sc.nextInt();
+	for (int i=1; i<=10; i++){
+		System.out.println(n+"x"+i+"="+n*i);
+	}
 # finding factorial
-Scanner sc = new Scanner(System.in);
-System.out.print("Enter a number: ");
-int n = sc.nextInt();
-int fac = 1;
-if (n>=0) {
-    int i=n;
-    while (i>=1){
-    	fac *= i;
-        i--;
-    }
-    System.out.println("Factorial of "+n+" is: "+fac);
-}
-else{
-    System.out.println("Negative numbers are not acceptable!!");
-}
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter a number: ");
+	int n = sc.nextInt();
+	int fac = 1;
+	if (n>=0) {
+	    int i=n;
+	    while (i>=1){
+	    	fac *= i;
+	        i--;
+	    }
+	    System.out.println("Factorial of "+n+" is: "+fac);
+	}
+	else{
+	    System.out.println("Negative numbers are not acceptable!!");
+	}
+# calculator (apna college)
+	Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        float a = sc.nextFloat();
+        System.out.println("Enter another number: ");
+        float b = sc.nextFloat();
+        System.out.println("Enter a number to perform the operation\n1 for addition\n2 for subtraction\n3 for multiplication\n4 for division\n5 to know the remainder");
+        int oper = sc.nextInt();
+        char si = '%';
+        switch (oper) {
+            case 1 -> {
+                System.out.printf("%1.1f+%1.1f=",a,b);
+                System.out.println(a+b);
+            }
+            case 2 -> {
+                System.out.printf("%1.1f-%1.1f=",a,b);
+                System.out.println(a-b);
+            }
+            case 3 -> {
+                System.out.printf("%1.1f*%1.1f=",a,b);
+                System.out.println(a*b);
+            }
+            case 4 -> {
+                if(b==0){
+                    System.out.println("Invalid division!!");
+                }
+                else{
+                System.out.printf("%1.1f/%1.1f=",a,b);
+                System.out.println(a/b);
+                }
+            }
+            case 5 -> {
+                 if(b==0){
+                    System.out.println("Invalid division!!");
+                }
+                else{
+                System.out.printf("%1.1f %c %1.1f=",a,si,b);
+                System.out.println(a%b);
+                }
+            }
+            default -> System.out.println("This operation is not valid");
+        }
+# calender
+	Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number to the corresponding month: ");
+        int month = sc.nextInt();
+        switch (month){
+            case 1-> System.out.println("January");
+            case 2-> System.out.println("February");
+            case 3-> System.out.println("March");
+            case 4-> System.out.println("April");
+            case 5-> System.out.println("May");
+            case 6-> System.out.println("June");
+            case 7-> System.out.println("July");
+            case 8-> System.out.println("August");
+            case 9-> System.out.println("September");
+            case 10-> System.out.println("October");
+            case 11-> System.out.println("November");
+            case 12-> System.out.println("December");
+            default -> System.out.println("Invalid number!!");
+        }
+# calculating diameter & area
+	Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the radius of a circle: ");
+        float rad = sc.nextFloat();
+        float pie = 3.14f;
+        System.out.print("diameter: ");
+        System.out.println(2*rad);
+        System.out.print("Area: ");
+        System.out.println(pie*rad*rad);
