@@ -1,0 +1,16 @@
+        //printing Hello World
+        System.out.println("Hello World");
+        // precedence
+        int c=6;
+        System.out.println(c++);
+        System.out.println(++c);
+        // multiplying 2 float no.
+        float a =7.9f;
+        float b =3.0f;
+        //System.out.printf("%f*%f=%f",a,b,a*b);
+        // swapping two numbers
+        float x =a;
+        a=b;
+        b=x;
+        System.out.println(a);
+        System.out.println(b);
