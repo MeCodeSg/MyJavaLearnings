@@ -135,3 +135,20 @@
         r*=x;
         expon(x,n-1,r);
     }
+# tower of hanoi
+    static void towerOfHanoi(int n,String sou, String hel, String des){
+        if (n==0){
+            return;
+        }
+        towerOfHanoi(n-1, sou, des, hel);
+        System.out.println("transfer disk "+n+" from "+sou+" to "+des);
+        towerOfHanoi(n-1, hel, sou, des);
+    }
+# printing a string in reverse
+    static void stringReverse (String word, int n){
+        if (n==-1){
+            return;
+        }
+        System.out.print(word.charAt(n));
+        stringReverse(word,n-1);
+    }
