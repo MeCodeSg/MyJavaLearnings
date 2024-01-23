@@ -152,3 +152,101 @@
         System.out.print(word.charAt(n));
         stringReverse(word,n-1);
     }
+# is array sorted? (strictly increasing)
+    static boolean isSorted(int arr[], int n) {
+        if(n==arr.length-1) {
+            return true;
+        }
+        if(arr[n]>=arr[n+1]) {
+            return false;
+        }
+        return isSorted(arr,n+1);
+    }
+# moving a desired element to the last (fails when copies are together placed inside the string)
+    static void movingInAString(StringBuilder word, char desElement, int n, int counter) {
+        if(n==word.length()-1) {
+            for(int i=1; i<=counter; i++) {
+                word.append(desElement);
+            }
+            System.out.println(word);
+            return;
+        }
+        if(desElement==word.charAt(n)) {
+            counter+=1;
+            word.deleteCharAt(n);
+        }
+        movingInAString(word,desElement,n+1,counter);
+    }
+# moving a desired element to the last
+    #method1
+    static String movingAChar(String word, char desEle, int n, int counter, String newWord) {
+        if(n==word.length()) {
+            for(int i=0; i<counter; i++) {
+                newWord+=desEle;
+            }
+            return newWord;
+        }
+        if(desEle==word.charAt(n)) {
+            counter+=1;
+        }
+        else {
+            newWord+=word.charAt(n);
+        }
+        return movingAChar(word,desEle,n+1,counter,newWord);
+    }
+    #method2
+    static StringBuilder movingCharToLast(String word, char desEle, int n, int counter, StringBuilder newWord) {
+        if(n==word.length()) {
+            for(int i=0; i<counter; i++) {
+                newWord.append(desEle);
+            }
+            return newWord;
+        }
+        if(desEle==word.charAt(n)) {
+            counter+=1;
+        }
+        else {
+            newWord.append(word.charAt(n));
+        }
+        return movingCharToLast(word,desEle,n+1,counter,newWord);
+    }
+# removing duplicate chars from a string
+    # mymethod❤️
+    static boolean[] mapping=new boolean[26];
+    static String removeDuplicate(String word, int n, String newWord) {
+        if(n==word.length()) {
+            return newWord;
+        }
+        char currChar=word.charAt(n);
+        if(!map[currChar-'a']) {
+            newWord+=currChar;
+            map[currChar-'a']=true;
+        }
+        return removeDuplicate(word,n+1,newWord);
+    }
+    # ma'am method
+    public static boolean[] map = new boolean[26];
+    public static void removeDuplicates(String str, int idx, String newString) {
+        if(idx==str.length()) {
+            System.out.println(newString);
+            return;
+        }
+        char currChar = str.charAt(idx);
+        if(map[currChar-'a']) {
+            removeDuplicates(str, idx+1, newString);
+        }
+        else {
+            newString+=currChar;
+            map[currChar-'a']=true;
+            removeDuplicates(str, idx+1, newString);
+        }
+    }
+# printing all the possible subsequences
+    static void subsequences(String str, int idx, String newStr) {
+        if(idx==str.length()) {
+            System.out.println(newStr);
+            return;
+        }
+        subsequences(str,idx+1,newStr+str.charAt(idx));
+        subsequences(str, idx+1, newStr);
+    }
