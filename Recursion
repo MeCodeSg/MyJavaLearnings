@@ -250,3 +250,29 @@
         subsequences(str,idx+1,newStr+str.charAt(idx));
         subsequences(str, idx+1, newStr);
     }
+# linear search using recursion
+    static int []list={35,85,95,34,7,85};
+    static void linearSearch(int toSearch, int idx) {
+        if(idx==list.length-1) {
+            System.out.println("Not found");
+            return;
+        }
+        if(list[idx]==toSearch) {
+            System.out.println("Found at "+idx);
+            return;
+        }
+        linearSearch(toSearch,idx+1);
+    }
+# keypad combinations
+    static String [] keypad={".","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
+    static void keypadCombo(String str, String theCombo, int idx){
+        if(idx==str.length()) {
+            System.out.println(theCombo);
+            return;
+        }
+        char currChar = str.charAt(idx);
+        String mapping =keypad[currChar-'0'];
+        for(int i=0; i<mapping.length(); i++) {
+            keypadCombo(str,theCombo+mapping.charAt(i),idx+1);
+        }
+    }
