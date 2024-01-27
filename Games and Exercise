@@ -1,0 +1,18 @@
+# stone, paper scissors with computer
+        System.out.println("Press: 0 for rock, 1 for paper, 2 for scissors");
+        Scanner sc=new Scanner(System.in);
+        int userIn=sc.nextInt();
+        Random rn = new Random();
+        int comIn=rn.nextInt(3);
+
+        if(userIn==comIn) {
+            System.out.println("Draw");
+        }
+        else if(userIn==0 && comIn==2 || userIn==1 && comIn==0 || userIn==2 && comIn==1) {
+            System.out.println("You Win!!");
+        }
+        else {
+            System.out.println("You Loose!!");
+        }
+
+        System.out.println("Computer's choice: "+comIn);
