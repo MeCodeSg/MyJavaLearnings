@@ -1,0 +1,25 @@
+# basic super keyword functionality
+class Base {
+    int x;
+    Base() {
+        System.out.println("I'm a constructor");
+    }
+    Base(int x) {
+        System.out.println("I'm a base class constructor with x as: "+x);
+    }
+}
+class Derived extends Base {
+    int y;
+    Derived(int x, int y) {
+        super(x);
+        System.out.println("I'm a derived class constructor with y as: "+y);
+    }
+}
+class Gchild extends Derived {
+    int z;
+    Gchild(int x, int y, int z) {
+        super(x,y);
+        System.out.println("I'm a gchild constructor with z as: "+z);
+    }
+}
+# 
