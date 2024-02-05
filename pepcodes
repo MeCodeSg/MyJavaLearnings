@@ -1,0 +1,49 @@
+//input a number and then input numbers to know is it prime number times
+    public static Scanner sc=new Scanner(System.in);
+    public static void isPrime(int t) {
+        for(int i=0; i<t; i++) {
+            boolean IsPrime=true;
+            int n=sc.nextInt();
+            for(int j=2; j*j<=n; j++) {
+                if(n%j==0) {
+                    IsPrime=false;
+                    break;
+                }
+            }
+            if(IsPrime) {
+                System.out.println(n+" is Prime!!");
+            }
+            else {
+                System.out.println(n+" is NOT Prime!!");
+            }
+        }
+    }
+//Print all Prime Numbers till N
+    public static Scanner sc=new Scanner(System.in);
+    public static void printPrimeBtw(int h, int l) {
+        for(int i=l; i<=h; i++) {
+            boolean isPrime=true;
+            for(int j=2; j*j<=i; j++) {
+                if(i%j==0) {
+                    isPrime=false;
+                    break;
+                }
+            }
+            if(isPrime) {
+                System.out.println(i);
+            }
+        }
+    }
+//Print all Fibonacci Numbers till N
+    public static void printFib(int n) {
+        int a=0;
+        int b=1;
+        System.out.println(a);
+        System.out.println(b);
+        for(int i=0; i<n-2; i++) {
+            int c=a+b;
+            System.out.println(c);
+            a=b;
+            b=c;
+        }
+    }
