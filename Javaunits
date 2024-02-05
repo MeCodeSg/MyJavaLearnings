@@ -14,3 +14,26 @@
         b=x;
         System.out.println(a);
         System.out.println(b);
+    static int calPeri(int l, int b){
+        System.out.print("Perimeter: ");
+        return 2*(l+b);
+    } 
+    static void adding(int a, int b){
+        System.out.println("sum is "+ (a+b));
+    }
+    static int printSum(int n){
+        if (n==0){
+            return 0;
+        }
+        return n+printSum(n-1);
+    }
+    static void sum(int n, int Sum){
+        if (n==0){
+            System.out.println(Sum);
+            return;
+        }
+        Sum+=n;
+        sum(n-1,Sum);
+    }
+// to print all the arguments from the command line
+// code to add two complex numbers
