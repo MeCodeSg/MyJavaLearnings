@@ -18,7 +18,7 @@
             }
         }
     }
-//Print all Prime Numbers till N
+//Print all Prime Numbers between h and l
     public static Scanner sc=new Scanner(System.in);
     public static void printPrimeBtw(int h, int l) {
         for(int i=l; i<=h; i++) {
@@ -149,3 +149,273 @@
             }
         }
     }
+# Patterns
+easy{{ //pat1
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=i; j++) {
+        System.out.print("*");
+    }
+    System.out.println();
+}
+//pat2
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n-i+1; j++) {
+        System.out.print("*");
+    }
+    System.out.println();
+}
+//pat3
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n-i; j++) {
+        System.out.print(" ");
+    }
+    for(int j=1; j<=i; j++) {
+        System.out.print("*");
+    }
+    System.out.println();
+}
+//pat4
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=i-1; j++) {
+        System.out.print(" ");
+    }
+    for(int j=1; j<=n-i+1; j++) {
+        System.out.print("*");
+    }
+    System.out.println();
+} }}
+//pat5
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n-i; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=1; j<=2*i-1; j++) {
+        System.out.print("*\t");
+    }
+    System.out.println();
+}
+n-=1;
+for(int i=n; i>=1; i--) {
+    for(int j=1; j<=n-i+1; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=1; j<=2*i-1; j++) {
+        System.out.print("*\t");
+    }
+    System.out.println();
+}
+//pat6
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n-i; j++) {
+        System.out.print("*\t");
+    }
+    for(int j=1; j<=2*i-1; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=1; j<=n-i; j++) {
+        System.out.print("*\t");
+    }
+    System.out.println();
+}
+n-=1;
+for(int i=n; i>=1; i--) {
+    for(int j=1; j<=n-i+1; j++) {
+        System.out.print("*\t");
+    }
+    for(int j=1; j<=2*i-1; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=1; j<=n-i+1; j++) {
+            System.out.print("*\t");
+    }
+    System.out.println();
+}
+//pat7
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=i-1; j++) {
+        System.out.print(" \t");
+    }
+    System.out.print("*\t\n");
+}
+//pat8
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n-i; j++) {
+        System.out.print(" \t");
+    }
+    System.out.print("*\t\n");
+}
+//pat9
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=i-1; j++) {
+        System.out.print(" \t");
+    }
+    System.out.print("*\t");
+    for(int j=1; j<=2*(n-i)-1; j++) {
+        System.out.print(" \t");
+    }
+    if(i!=n) {
+        System.out.print("*\t");
+    }
+    System.out.println();
+}
+n-=1;
+for(int i=n; i>=1; i--) {
+    for(int j=1; j<=i-1; j++) {
+        System.out.print(" \t");
+    }
+    System.out.print("*\t");
+    for(int j=1; j<=2*(n-i)+1; j++) {
+        System.out.print(" \t");
+    }
+    System.out.print("*\t");
+    System.out.println();
+}
+//pat10
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n-i; j++) {
+        System.out.print(" ");
+    }
+    for(int j=1; j<=2*i-1; j++) {
+        if(j==1 || j==2*i-1) {
+            System.out.print("*");
+        }
+        else {
+            System.out.print(" ");
+        }
+    }
+    System.out.println();
+}
+for(int i=1; i<=n-1; i++) {
+    for(int j=1; j<=i; j++) {
+        System.out.print(" ");
+    }
+    for(int j=1; j<=2*(n-i)-1; j++) {
+        if(j==1 || j==2*(n-i)-1) {
+            System.out.print("*");
+        }
+        else {
+            System.out.print(" ");
+        }
+    }
+    System.out.println();
+}
+//pat11
+int k=1;
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=i; j++) {
+        System.out.print(k+" ");
+        k++;
+    }
+    System.out.println();
+}
+//pat12
+int a=0;
+int b=1;
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=i; j++) {
+        System.out.print(a+" ");
+        int c=a+b;
+        a=b;
+        b=c;
+    }
+    System.out.println();
+}
+//pat13
+//pat14
+for(int i=1; i<=10; i++) {
+    System.out.println(n+"*"+i+"="+n*i);
+}
+//pat15
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n-i; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=i; j<2*i; j++) {
+        System.out.print(j+"\t");
+    }
+    for(int j=2*(i-1); j>=i; j--) {
+        System.out.print(j+"\t");
+    }
+    System.out.println();
+}
+for(int i=1; i<n; i++) {
+    for(int j=1; j<=i; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=n-i; j<2*(n-i); j++) {
+        System.out.print(j+"\t");
+    }
+    for(int j=2*(n-i-1); j>=n-i; j--) {
+        System.out.print(j+"\t");
+    }
+    System.out.println();
+}
+//pat16
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=i; j++) {
+        System.out.print(j+"\t");
+    }
+    for(int j=1; j<=2*(n-i)-1; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=i; j>=1; j--) {
+        if(i!=n || j!=n) {
+            System.out.print(j+"\t");
+        }
+    }
+    System.out.println();
+}
+//pat17
+for(int i=1;i<=n; i++) {
+    if(n%2==0) {
+        System.out.println("n should be ODD only!!");
+        break;
+    }
+    if(i==n/2+1) {
+        for(int j=1; j<=n/2; j++) {
+            System.out.print("*\t");
+        }
+    }
+    else {
+        for(int j=1; j<=n/2; j++) {
+            System.out.print(" \t");
+        }
+    }
+    if(i<=n/2+1) {
+        for(int j=1; j<=i; j++) {
+            System.out.print("*\t");
+        }
+    }
+    else {
+        for(int j=1; j<=n-i+1; j++) {
+            System.out.print("*\t");
+        }
+    }
+    System.out.println();
+}
+//pat18
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<i; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=1; j<=2*(n-i+1)-1; j++) {
+        if(i==1 || j==1 || i==n || j==2*(n-i+1)-1) {
+            System.out.print("*\t");
+        }
+        else {
+            System.out.print(" \t");
+        }
+    }
+    System.out.println();
+}
+for(int i=1; i<n; i++) {
+    for(int j=1; j<n-i; j++) {
+        System.out.print(" \t");
+    }
+    for(int j=1; j<=2*i+1; j++) {
+        System.out.print("*\t");
+    }
+    System.out.println();
+}
+//pat19
+//pat20
