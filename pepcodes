@@ -532,3 +532,46 @@ for(int i=1; i<=n; i++) {
 }
 //pat19
 //pat20
+//digt frequency
+public static void digitFrequency(int n, int d) {
+    int m=n;
+    int f=0;
+    while(n!=0) {
+        int dig=n%10;
+        if(dig==d) {
+            f++;
+        }
+        n/=10;
+    }
+    System.out.println("frequency of "+d+" in "+m+": "+f);
+}
+//decimal to any base conversion
+public static int decimalToAnyBase(int n, int b) {
+    int c=1;
+    int base=0;
+    while(n!=0) {
+        int dig=n%b;
+        base+=dig*c;
+        n/=b;
+        c*=10;
+    }
+    return base;
+}
+//any base to decimal conversion
+public static int anyBaseToDecimal(int n, int b) {
+    int c=1;
+    int decimal=0;
+    while(n!=0) {
+        int dig=n%10;
+        decimal+=dig*c;
+        n/=10;
+        c*=2;
+    }
+    return decimal;
+}
+//any base to any base conversion
+public static int anyBaseToAnyBase(int n, int b1, int b2) {
+    int deci=anyBaseToDecimal(n,b1);
+    int result=decimalToAnyBase(deci,b2);
+    return result;
+}
