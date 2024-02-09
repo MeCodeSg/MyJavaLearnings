@@ -231,11 +231,24 @@ for(int i=n; i>=1; i--) {
     System.out.println();
 }
 //pat7
+#m1
 for(int i=1; i<=n; i++) {
     for(int j=1; j<=i-1; j++) {
         System.out.print(" \t");
     }
     System.out.print("*\t\n");
+}
+#m2💕
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n; j++) {
+        if(i==j) {
+            System.out.print("*\t");
+        }
+        else {
+            System.out.print(" \t");
+        }
+    }
+    System.out.println();
 }
 //pat8
 for(int i=1; i<=n; i++) {
@@ -243,6 +256,18 @@ for(int i=1; i<=n; i++) {
         System.out.print(" \t");
     }
     System.out.print("*\t\n");
+}
+#m2💕
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n; j++) {
+        if(i+j==n+1) {
+            System.out.print("*\t");
+        }
+        else {
+            System.out.print(" \t");
+        }
+    }
+    System.out.println();
 }
 //pat9
 for(int i=1; i<=n; i++) {
@@ -268,6 +293,22 @@ for(int i=n; i>=1; i--) {
         System.out.print(" \t");
     }
     System.out.print("*\t");
+    System.out.println();
+}
+#m2💕
+if(n%2==0) {
+    System.out.println("n should be ODD only!!");
+    return;
+}
+for(int i=1; i<=n; i++) {
+    for(int j=1; j<=n; j++) {
+        if(i+j==n+1 || i==j) {
+            System.out.print("*\t");
+        }
+        else {
+            System.out.print(" \t");
+        }
+    }
     System.out.println();
 }
 //pat10
