@@ -38,11 +38,10 @@
     public static void printFib(int n) {
         int a=0;
         int b=1;
-        System.out.println(a);
-        System.out.println(b);
-        for(int i=0; i<n-2; i++) {
-            int c=a+b;
-            System.out.println(c);
+       int c;
+        for(int i=1; i<=n; i++) {
+            System.out.print(a+" ");
+            c=a+b;
             a=b;
             b=c;
         }
@@ -79,13 +78,37 @@
             i--;
         }
     }
+    //efficient method
+    public static void printDigits(int n) {
+        int count=digitCount(n);
+        int div=(int)Math.pow(10, count-1);
+        while(div!=0) {
+            int dig=n/div;
+            n%=div;
+            System.out.print(dig+" ");
+            div/=10;
+        }
+    }
 //print the digits in reverse
-    public static void printReverseDigits(int n) {
+    public static void ReverseDigits(int n) {
         while (n != 0) {
             int dig = n % 10;
             System.out.print(dig);
             n /= 10;
         }
+    }
+    ## This doesn't resolves numbers like '23400'
+    public static int reverseDigits(int n) {
+        int count=digitCount(n);
+        int p=(int)Math.pow(10, count-1);
+        int r=0;
+        while(n!=0) {
+            int dig=n%10;
+            n/=10;
+            r+=dig*p;
+            p/=10;
+        }
+        return r;
     }
 //print the digits in so called inverse
     public static void printInverse(int n) {
@@ -99,28 +122,19 @@
         }
         System.out.println(m);
     }
-//rotate a number n by k times
-    public static void rotateNumber(int n, int k) {
-        int i = 0;
-        int m = n;
-        while (m != 0) {
-            m /= 10;
-            i++;
+//rotate a number n by k times❤️❤️
+    public static int rotateDigits(int n, int k) {
+        int count=digitCount(n);
+        k%=count;
+        if(k<0) {
+            k+=count;
         }
-        if (k % i == 0) {
-            k = 0;
-        } else if (k < -i) {
-            int a = k / i - 1;
-            k += (-a) * i;
-        } else if (k > i) {
-            int a = k / i;
-            k -= a * i;
-        }
-        int p = (int) (Math.pow(10, k));
-        int dig = n % p;
-        n /= p;
-        n += (int)(dig*Math.pow(10, i-k));
-        System.out.println(n);
+        int mul=(int)Math.pow(10, count-k);
+        int div=(int)Math.pow(10, k);
+        int dig=n%div;
+        n/=div;
+        int r=n+dig*mul;
+        return r;
     }
 //print GCD and LCM
     public static void printGcdLcm(int n1, int n2) {
@@ -135,6 +149,18 @@
         int lcm=(on1*on2)/gcd;
         System.out.println("GCD: "+gcd);
         System.out.println("LCM: "+lcm);
+    }
+    public static void printGCD(int m, int n) {
+        int a=m;
+        int b=n;
+        int r;
+        while(m!=0) {
+            r=n%m;
+            n=m;
+            m=r;
+        }
+        System.out.println(n);
+        System.out.println(a*b/n);
     }
 //print all prime factors of a number
     public static void primeFactorisation(int n) {
