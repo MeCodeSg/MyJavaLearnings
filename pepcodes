@@ -162,17 +162,16 @@
         System.out.println(n);
         System.out.println(a*b/n);
     }
-//print all prime factors of a number
+//print all prime factors of a number❤️❤️
     public static void primeFactorisation(int n) {
-        int i=2;
-        while(n!=1) {
-            if(n%i==0) {
-                System.out.print(i+" ");
+        for(int i=2; i*i<=n; i++) {
+            while(n%i==0) {
                 n/=i;
+                System.out.print(i+" ");
             }
-            else {
-                i++;
-            }
+        }
+        if(n!=1) {
+            System.out.print(n);
         }
     }
 # Patterns
@@ -559,18 +558,17 @@ for(int i=1; i<=n; i++) {
 //pat19
 //pat20
 //digt frequency
-public static void digitFrequency(int n, int d) {
-    int m=n;
-    int f=0;
-    while(n!=0) {
-        int dig=n%10;
-        if(dig==d) {
-            f++;
+    public static int digitFrequency(int n, int d) {
+        int f=0;
+        while(n!=0) {
+            int dig=n%10;
+            n/=10;
+            if(dig==d) {
+                f++;
+            }
         }
-        n/=10;
+        return f;
     }
-    System.out.println("frequency of "+d+" in "+m+": "+f);
-}
 //decimal to any base conversion
 public static int decimalToAnyBase(int n, int b) {
     int c=1;
