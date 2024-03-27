@@ -288,3 +288,27 @@
             }
         }
     }
+#calculating ncr
+	public static int nCr(int n, int r) {
+        int result=1;
+        int d=n-r;
+        for(int i=n; i>d; i--) {
+            result*=i;
+        }
+        for(int i=1; i<=r; i++) {
+            result/=i;
+        }
+        return result;
+    }
+#ncr pattern
+    public static void pncPattern(int n) {
+        for(int i=1; i<=n; i++) {
+            for(int j=1; j<=n-i; j++) {
+                System.out.print(" ");
+            }
+            for(int j=0; j<=i; j++) {
+                System.out.print(nCr(i, j)+" ");
+            }
+            System.out.println();
+        }
+    }
