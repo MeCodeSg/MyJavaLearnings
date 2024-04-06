@@ -1,19 +1,19 @@
 # printing 1 to n
     #method1
-    static void printNum2(int n, int m){
-        if (n==m+1){
+    public static void printSeq(int i, int n) {
+        if(i>n) {
             return;
         }
-        System.out.println(n);
-        printNum2(n+1, m);
+        System.out.println(i);
+        printSeq(i+1,n);
     }
     #method2
     static void printNum1(int n){
         if (n==0){
             return;
         }
-        printNum1(n-1);
-        System.out.println(n);
+        printNum1(n-1);            ♡♡
+        System.out.println(n);     ♡♡
     }
 # printing n to 1
     #method1
@@ -80,6 +80,14 @@
         else {
             return;  #// this return is not necessary
         }           #// else block completely can be neglected from here
+    }
+    public static void printFib(int a, int b, int n) {
+        if(n==0) {
+            return;
+        }
+        System.out.println(a);
+        int c=a+b;
+        printFib(b,c,n-1);
     }
     #method2 (vague)
     static void printFib(int a, int b, int n, int i){
