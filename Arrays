@@ -1,0 +1,16 @@
+                     ## printing a 1D array -> this returns a string
+        System.out.println(Arrays.toString(arr));
+
+                     ## printing a 2D array
+
+# method 1
+        for(int[] row: a) {
+            System.out.println(Arrays.toString(row));
+        }
+# method 2
+        for(int[] row: a) {
+            for(int col: row) {
+                System.out.print(col+" ");
+            }
+            System.out.println();
+        }
